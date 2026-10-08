@@ -1,21 +1,6 @@
 {
-  "name": "amartya-randive-portfolio",
+  "name": "amartya-portfolio",
   "version": "1.0.0",
-  "description": "Professional portfolio for Amartya Randive - Condition Monitoring & Technical Business Development Engineer",
-  "private": true,
-  "scripts": {
-    "build": "echo \"Production static site ready for deployment\"",
-    "start": "npx serve .",
-    "preview": "npx serve ."
-  },
-  "keywords": [
-    "portfolio",
-    "condition-monitoring",
-    "vibration-analysis",
-    "bearing-analysis",
-    "technical-business-development",
-    "engineering"
-  ],
-  "author": "Amartya Randive",
-  "license": "UNLICENSED"
+  "description": "Professional portfolio for Amartya Randive",
+  "private": true
 }

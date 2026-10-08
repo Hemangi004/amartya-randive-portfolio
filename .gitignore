@@ -18,3 +18,5 @@ node_modules/
 # Local Dev Scratch
 .vscode/
 .idea/
+
+.vercel
