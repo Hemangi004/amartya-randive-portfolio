@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amartyarandive.dev/sitemap.xml

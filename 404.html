@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Amartya Randive</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .error-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .error-card {
+      background: var(--bg-card);
+      border: 1px solid var(--steel-border-light);
+      border-radius: var(--border-radius-lg);
+      padding: 60px 40px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .error-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8, #f59e0b);
+    }
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+    .error-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .error-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-wrapper">
+    <div class="error-card">
+      <div class="section-tag" style="margin-bottom: 18px;">Diagnostic Error</div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page / Route Not Found</h1>
+      <p class="error-desc">
+        The requested resource is not available or has been relocated within the telemetry system.
+      </p>
+      <a href="/" class="btn btn-primary">
+        <span>Return to Portfolio</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
