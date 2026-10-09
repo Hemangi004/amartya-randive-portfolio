@@ -8,15 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const siteNav = document.getElementById('siteNav');
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-menu a');
+  const navLinks = document.querySelectorAll('.hero-nav-menu a, .hero-mobile-menu a, .sticky-menu a');
   const sections = document.querySelectorAll('section[id]');
 
-  // Sticky Navigation Header on scroll
+  // Sticky Navigation Header on scroll (shows after passing the Hero section)
   const handleScroll = () => {
-    if (window.scrollY > 40) {
-      siteNav.classList.add('scrolled');
+    if (window.scrollY > 250) {
+      siteNav.classList.add('visible');
     } else {
-      siteNav.classList.remove('scrolled');
+      siteNav.classList.remove('visible');
     }
 
     // Active Section Tracking
@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    navLinks.forEach(link => {
+    const allLinks = document.querySelectorAll('.hero-nav-menu a, .sticky-menu a');
+    allLinks.forEach(link => {
       link.classList.remove('active');
       if (link.getAttribute('href') === `#${currentId}`) {
         link.classList.add('active');

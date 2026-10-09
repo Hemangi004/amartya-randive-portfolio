@@ -2,5 +2,9 @@
   "name": "amartya-portfolio",
   "version": "1.0.0",
   "description": "Professional portfolio for Amartya Randive",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  }
 }
