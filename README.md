@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Amartya Randive**, Condition Monitoring & Technical Business Development Engineer.
 
-**Live Domain**: [https://amartyarandive.dev](https://amartyarandive.dev)
+**Live Domain**: [https://hemangivertixop.github.io/Portfolio-Amartya-Randive/](https://hemangivertixop.github.io/Portfolio-Amartya-Randive/)
 
 ---
 
