@@ -52,16 +52,47 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
         : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
     });
-
-    // Close mobile menu on link click
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
-      });
-    });
   }
+
+  // Precise smooth scrolling for navigation anchor links with fixed header offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        e.preventDefault();
+        const headerOffset = 72;
+        const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        const scrollToY = targetId === '#home' ? 0 : Math.max(0, targetTop - headerOffset);
+
+        window.scrollTo({
+          top: scrollToY,
+          behavior: 'smooth'
+        });
+
+        // Close mobile dropdown if open
+        if (navMenu && navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          if (navToggle) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+          }
+        }
+
+        // Keep sticky nav visible when navigating to sub-sections
+        if (siteNav) {
+          if (targetId === '#home') {
+            setTimeout(() => {
+              if (window.scrollY < 200) siteNav.classList.remove('visible');
+            }, 400);
+          } else {
+            siteNav.classList.add('visible');
+          }
+        }
+      }
+    });
+  });
 
   // Toast notification for clipboard copies
   const toast = document.getElementById('toastNotice');
