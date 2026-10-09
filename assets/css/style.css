@@ -497,57 +497,6 @@ a {
   margin: 0;
 }
 
-.hero-scroll-indicator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0.9;
-  margin-top: 6px;
-  margin-left: clamp(160px, 20vw, 320px);
-  transition: opacity var(--transition-fast);
-  cursor: pointer;
-}
-
-.hero-scroll-indicator:hover {
-  opacity: 1;
-  color: #ffffff;
-}
-
-.scroll-mouse {
-  width: 16px;
-  height: 24px;
-  border: 1.5px solid #ffffff;
-  border-radius: 9px;
-  display: flex;
-  justify-content: center;
-  padding-top: 4px;
-}
-
-.scroll-wheel {
-  width: 2px;
-  height: 4.5px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  animation: scroll-wheel-anim 1.8s infinite;
-}
-
-@keyframes scroll-wheel-anim {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(7px); opacity: 0; }
-}
-
-.scroll-text {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-top: 2px;
-}
-
 /* ==========================================================================
    STICKY NAVIGATION BAR (Appears on scroll past hero)
    ========================================================================== */
@@ -1774,10 +1723,6 @@ a {
   .hero-name-randive {
     font-size: clamp(2.8rem, 12vw, 4.8rem);
     margin-left: clamp(20px, 8vw, 60px);
-  }
-
-  .hero-scroll-indicator {
-    margin-left: 20px;
   }
 
   .hero-editorial-img {
