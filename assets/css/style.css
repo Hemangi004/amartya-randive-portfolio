@@ -255,7 +255,8 @@ a {
   width: 100%;
   height: 100vh;
   height: 100dvh;
-  min-height: 720px;
+  max-height: 100vh;
+  max-height: 100dvh;
   overflow: hidden;
   background-color: #65472f;
   margin: 0;
@@ -263,6 +264,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .hero-editorial-backdrop {
@@ -288,10 +290,10 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: clamp(22px, 3.5vh, 36px) clamp(32px, 4.5vw, 60px) 0;
+  padding: clamp(18px, 2.8vh, 32px) clamp(32px, 4.5vw, 60px) 0;
   display: flex !important;
   flex-direction: row !important;
-  align-items: flex-start !important;
+  align-items: flex-end !important;
   justify-content: space-between !important;
   z-index: 10;
   box-sizing: border-box;
@@ -328,8 +330,9 @@ a {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   letter-spacing: 0.01em;
-  padding-top: 3px;
+  padding-bottom: 2px;
   white-space: nowrap;
+  text-align: center;
 }
 
 .hero-nav-menu {
@@ -338,7 +341,7 @@ a {
   align-items: center !important;
   gap: clamp(18px, 2.2vw, 28px);
   list-style: none;
-  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .hero-nav-menu a {
@@ -381,43 +384,43 @@ a {
   position: relative;
   z-index: 10;
   padding: 0 clamp(32px, 4.5vw, 60px);
-  max-width: 560px;
-  margin-top: clamp(10px, 2.5vh, 26px);
-  margin-bottom: auto;
+  max-width: 580px;
+  margin-top: auto;
+  margin-bottom: clamp(10px, 1.8vh, 24px);
   box-sizing: border-box;
 }
 
 .hero-role-category {
   display: block;
   font-family: var(--font-sans);
-  font-size: clamp(0.76rem, 0.9vw, 0.86rem);
+  font-size: clamp(0.72rem, 0.86vw, 0.84rem);
   font-weight: 600;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
   color: #f2e6d8;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: clamp(3px, 0.5vh, 5px);
   text-shadow: 1px 2px 8px rgba(35, 20, 12, 0.6);
 }
 
 .hero-role-headline {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.35rem, 2.35vw, 2.2rem);
+  font-size: clamp(1.2rem, min(2.1vw, 3.2vh), 2.05rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.015em;
   color: #ffffff;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1vh, 10px);
   text-shadow: 2px 4px 14px rgba(35, 20, 12, 0.7);
 }
 
 .hero-role-summary {
   font-family: var(--font-sans);
-  font-size: clamp(0.85rem, 0.96vw, 0.94rem);
+  font-size: clamp(0.82rem, min(0.92vw, 1.5vh), 0.92rem);
   color: #e8ded4;
-  line-height: 1.55;
+  line-height: 1.5;
   max-width: 500px;
-  margin-bottom: 16px;
+  margin-bottom: clamp(10px, 1.4vh, 14px);
   text-shadow: 1px 2px 8px rgba(35, 20, 12, 0.55);
 }
 
@@ -425,18 +428,18 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 0.8vw, 8px);
 }
 
 .skill-pill {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: clamp(0.72rem, 0.78vw, 0.78rem);
   font-weight: 500;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
-  padding: 5px 14px;
+  padding: clamp(3px, 0.5vh, 5px) clamp(10px, 1vw, 14px);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -448,12 +451,12 @@ a {
   border-color: #ffffff;
 }
 
-/* Bottom Editorial Signature Typography & Nested Scroll Indicator */
+/* Bottom Editorial Signature Typography */
 .hero-signature-canvas {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding: 0 clamp(32px, 4.5vw, 60px) clamp(16px, 2.5vh, 26px);
+  padding: 0 clamp(32px, 4.5vw, 60px) clamp(16px, 2.5vh, 28px);
   box-sizing: border-box;
   pointer-events: none;
 }
@@ -468,7 +471,7 @@ a {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(3.8rem, 8.5vw, 7.6rem);
+  font-size: clamp(3.2rem, min(7.5vw, 11vh), 7.2rem);
   line-height: 0.92;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -481,7 +484,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: clamp(80px, 11vw, 170px);
+  margin-left: clamp(60px, 10vw, 160px);
 }
 
 .hero-name-randive {
@@ -489,7 +492,7 @@ a {
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(3.4rem, 8vw, 7.1rem);
+  font-size: clamp(2.8rem, min(7vw, 10vh), 6.5rem);
   line-height: 0.88;
   color: #ffffff;
   letter-spacing: 0.04em;
@@ -1699,7 +1702,8 @@ a {
   .hero-middle-content {
     padding: 0 20px;
     max-width: 100%;
-    margin-top: 14px;
+    margin-top: auto;
+    margin-bottom: 12px;
   }
 
   .hero-role-headline {
