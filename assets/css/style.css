@@ -324,11 +324,12 @@ a {
 
 .hero-role-tag {
   font-family: var(--font-sans);
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(0.82rem, 0.92vw, 0.92rem);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   letter-spacing: 0.01em;
-  padding-top: 2px;
+  padding-top: 3px;
+  white-space: nowrap;
 }
 
 .hero-nav-menu {
@@ -1660,11 +1661,13 @@ a {
 /* ==========================================================================
    RESPONSIVE DESIGN (MOBILE-FIRST BREAKPOINTS)
    ========================================================================== */
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .hero-role-tag {
     display: none;
   }
+}
 
+@media (max-width: 1080px) {
   .hero-top-navbar {
     padding: 24px 32px 0;
   }
