@@ -164,5 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     animateCounters();
   }
+
+  // Ensure all media preview videos are muted
+  const previewVideos = document.querySelectorAll('.project-visual-preview video');
+  previewVideos.forEach(v => {
+    v.muted = true;
+    v.volume = 0;
+  });
 });
 
