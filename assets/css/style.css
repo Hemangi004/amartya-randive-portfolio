@@ -1164,9 +1164,13 @@ a {
   object-position: center 35%;
 }
 
-.project-card:hover .project-visual-preview img,
-.project-card:hover .project-visual-preview video {
+.project-card:hover .project-visual-preview img {
   transform: scale(1.02);
+}
+
+.project-visual-preview video {
+  pointer-events: none;
+  user-select: none;
 }
 
 .visual-tag {
